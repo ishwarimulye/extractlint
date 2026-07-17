@@ -20,9 +20,17 @@ def get_adapter(name: str):
 
 
 def _register_builtins():
-    from .adapters import pymupdf_adapter, pdfplumber_adapter
+    # pymupdf is a required dependency, always available.
+    from .adapters import pymupdf_adapter
     register_adapter("pymupdf", pymupdf_adapter.extract)
-    register_adapter("pdfplumber", pdfplumber_adapter.extract)
+
+    # pdfplumber is optional -- only register it if actually installed,
+    # so a plain `pip install extractlint` doesn't crash on import.
+    try:
+        from .adapters import pdfplumber_adapter
+        register_adapter("pdfplumber", pdfplumber_adapter.extract)
+    except ImportError:
+        pass
 
 
 _register_builtins()
