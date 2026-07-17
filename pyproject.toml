@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "extractlint"
+version = "0.1.0"
+description = "Lightweight, extractor-agnostic tool to visually inspect PDF text-extraction quality before it silently breaks your RAG or document pipeline."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ishwari Mulye" }]
+dependencies = ["pymupdf>=1.23"]
+
+[project.optional-dependencies]
+pdfplumber = ["pdfplumber>=0.10"]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
