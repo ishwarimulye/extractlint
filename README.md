@@ -8,7 +8,7 @@ If you've built anything that pulls text out of PDFs and feeds it to an LLM, you
 
 Most tools in this space (LlamaParse, Unstructured, Docling, and friends) compete on being a *better parser*. None of them are a lightweight *QA layer* that sits on top of whichever parser you already picked and tells you which pages to actually go check. That's what this is.
 
-![Sample inspection report](examples/screenshot_summary.png)
+![Sample inspection report](https://raw.githubusercontent.com/ishwarimulye/extractlint/main/examples/screenshot_summary.png)
 
 ## What it does
 
@@ -66,7 +66,7 @@ report = extractlint.inspect("report.pdf", extractor="my_extractor")
 
 A flagged page shows the extracted text next to PyMuPDF's own baseline reading, so you can see exactly what went wrong instead of just a score:
 
-![Flagged page with text comparison](examples/screenshot_flagged.png)
+![Flagged page with text comparison](https://raw.githubusercontent.com/ishwarimulye/extractlint/main/examples/screenshot_flagged.png)
 
 ## Use cases
 
